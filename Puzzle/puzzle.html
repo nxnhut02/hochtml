@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUZZLE</title>
+</head>
+<style>
+    .container {
+        text-align: center;
+    }
+    body {
+        background-color: rgb(185, 163, 138);
+        color: rgb(73, 26, 26);
+    }
+    img {
+        margin: 10px;
+        border: 5px solid rgb(185, 102, 102);
+        border-radius: 100px;
+
+    }
+</style>
+<body>
+<div class="container">
+
+    <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">PUZZLE GAME</h1>
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh1.jpg" alt="" id="img1" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh2.jpg" alt="" id="img2" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh3.jpg" alt="" id="img3" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh4.jpg" alt="" id="img4" width="200px"> 
+    <br>
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh5.jpg" alt="" id="img5" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh6.jpg" alt="" id="img6" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh7.jpg" alt="" id="img7" width="200px">
+    <img onclick="chuyenAnh(this.id)" src="puzzle-img/anh8.jpg" alt="" id="img8" width="200px">
+</div>
+    <script>
+        function chuyenAnh(id) {
+         let img = document.getElementById(id);
+         let x = parseInt(img.alt);
+
+         x = (x < 8) ? x + 1 : 1;
+         img.src = "puzzle-img/anh" + x + ".jpg";
+         img.alt = x;
+
+         
+        //  if(img.src.match("puzzle-img/anh1.jpg"))
+        //  img.src = "puzzle-img/anh2.jpg";
+        //  else if(img.src.match("puzzle-img/anh2.jpg"))
+        //  img.src = "puzzle-img/anh3.jpg";
+        //  else if(img.src.match("puzzle-img/anh3.jpg"))
+        //  img.src = "puzzle-img/anh4.jpg";
+        //  else if(img.src.match("puzzle-img/anh4.jpg"))
+        //  img.src = "puzzle-img/anh5.jpg";
+        //  else if(img.src.match("puzzle-img/anh5.jpg"))
+        //  img.src = "puzzle-img/anh6.jpg";
+        //  else if(img.src.match("puzzle-img/anh6.jpg"))
+        //  img.src = "puzzle-img/anh7.jpg";
+        //  else if(img.src.match("puzzle-img/anh7.jpg"))
+        //  img.src = "puzzle-img/anh8.jpg";
+        //  else if(img.src.match("puzzle-img/anh8.jpg"))
+        //  img.src = "puzzle-img/anh1.jpg";
+        checkAnh();
+        }
+        function checkAnh(){
+            let img1 = document.getElementById("img1");
+            let img2 = document.getElementById("img2");
+            let img3 = document.getElementById("img3");
+            let img4 = document.getElementById("img4");
+            let img5 = document.getElementById("img5");
+            let img6 = document.getElementById("img6");
+            let img7 = document.getElementById("img7");
+            let img8 = document.getElementById("img8");
+
+            if(img1.src == img2.src && img2.src == img3.src && img3.src == img4.src && img4.src == img5.src && img5.src == img6.src && img6.src == img7.src && img7.src == img8.src){
+                alert("Bạn đã chiến thắng");
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
